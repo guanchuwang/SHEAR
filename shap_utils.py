@@ -381,31 +381,31 @@ def permutation_sample_parallel(f, x, reference, batch_size=16, antithetical=Fal
     #
     # return deltas.mean(dim=0).unsqueeze(dim=0)
 
-@torch.no_grad()
-def permutation_sample_serial(f, x, reference, batch_size=16, antithetical=False):
-
-    M = x.shape[-1]
-    queue = torch.arange(M).unsqueeze(dim=0).repeat((batch_size, 1))
-
-    for idx in range(batch_size):
-        if antithetical and idx > batch_size//2:
-            queue[idx] = torch.flip(queue[batch_size-1-idx], dims=(0,))
-        else:
-            queue[idx] = queue[idx, torch.randperm(M)]
-
-    arange = torch.arange(batch_size)
-    S = torch.zeros_like(queue).type(torch.long)
-    deltas = torch.zeros_like(queue).type(torch.float)
-    baseline_value = f(reference.unsqueeze(dim=0)).repeat((batch_size, 1))
-    for index in range(M):
-        S[arange, queue[:, index]] = 1
-        # print(S.shape, x.shape, reference.shape)
-        x_mask = S * x + (1-S) * reference.unsqueeze(dim=0)
-        cur_value = f(x_mask)
-        deltas[arange, queue[:, index]] = (cur_value - baseline_value).squeeze(dim=1)
-        baseline_value = cur_value
-
-    return deltas.mean(dim=0).unsqueeze(dim=0)
+# @torch.no_grad()
+# def permutation_sample_serial(f, x, reference, batch_size=16, antithetical=False):
+#
+#     M = x.shape[-1]
+#     queue = torch.arange(M).unsqueeze(dim=0).repeat((batch_size, 1))
+#
+#     for idx in range(batch_size):
+#         if antithetical and idx > batch_size//2:
+#             queue[idx] = torch.flip(queue[batch_size-1-idx], dims=(0,))
+#         else:
+#             queue[idx] = queue[idx, torch.randperm(M)]
+#
+#     arange = torch.arange(batch_size)
+#     S = torch.zeros_like(queue).type(torch.long)
+#     deltas = torch.zeros_like(queue).type(torch.float)
+#     baseline_value = f(reference.unsqueeze(dim=0)).repeat((batch_size, 1))
+#     for index in range(M):
+#         S[arange, queue[:, index]] = 1
+#         # print(S.shape, x.shape, reference.shape)
+#         x_mask = S * x + (1-S) * reference.unsqueeze(dim=0)
+#         cur_value = f(x_mask)
+#         deltas[arange, queue[:, index]] = (cur_value - baseline_value).squeeze(dim=1)
+#         baseline_value = cur_value
+#
+#     return deltas.mean(dim=0).unsqueeze(dim=0)
 
 
 # @torch.no_grad()
