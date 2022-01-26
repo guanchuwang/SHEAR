@@ -20,7 +20,7 @@ Specifically, for each feature, SHEAR first calculates its cross-contribution wi
 then greedily selects the optimal cooperators to maximize the cumulative cross-contribution; 
 finally estimates the contribution of the feature throughout the optimal cooperators.
 <div align=center>
-<img width="1000" height="150" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/eff_shap.png">
+<img width="1000" height="200" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/eff_shap.png">
 </div>
 
 ### Time Complexity of SHEAR
