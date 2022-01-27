@@ -2,30 +2,30 @@
 
 ### Research Motivation
 
-Explaining the behavior of deep neural networks is a significant problem according to not only the practical requirement and but also the regulations in different domains.
-Among the state-of-art techniques of model interpretation, the Shapley value provides a natural and effective explanation for deep neural network from the perspective of cooperative game theory. 
+Explaining the behavior of deep neural networks (DNNs) is a significant problem according to not only the practical requirement and but also the regulations in different domains.
+Among the state-of-art techniques of DNN interpretation, the Shapley value provides a natural and effective explanation from the perspective of cooperative game theory. 
 However, the calculation of Shapley value is known to be an NP-hard problem with extremely high computational complexity. 
 To solve this problem, we propose <b>SHEAR</b> for efficient Shapley value estimation in this repo.
            
 ### Research Challenges  
 
 The brute-force algorithm to achieve exact Shapley values requires the enumeration of all possible feature coalitions, where the complexity grows exponentially with the feature number.
-To address this issue, SHEAR only focuses on the optimal cooperators of each feature for the estimation of feature contribution, where the enumeration throughout the whole feature space has been avoided. 
-In such a manner, the involved feature number reduces so that the computational efficiency can be significantly improved. 
+To address this issue, SHEAR only involves few feature coalitions for the estimation.
+In such a manner, the enumeration throughout the whole feature space can be avoided such that the computational efficiency can be significantly improved. 
 
 ### SHEAR Framework
 
-As shown in the following figure, given the black-box model <i>f</i> and feature value <b>x</b> = [x<sub>1</sub>,··· ,x<sub>M</sub>], SHEAR estimates the contribution of each feature independently.
+As shown in the following figure, given a DNN model <i>f</i> and feature value <b>x</b> = [x<sub>1</sub>,··· ,x<sub>M</sub>], SHEAR estimates the contribution of each feature independently.
 Specifically, for each feature, SHEAR first calculates its cross-contribution with other features; 
-then greedily selects the optimal cooperators to maximize the cumulative cross-contribution; 
-finally estimates the contribution of the feature throughout the optimal cooperators.
+then greedily selects the contributive cooperators to maximize the cumulative cross-contribution; 
+finally estimates the feature contribution throughout the coalitions of contributive cooperators.
 <div align=center>
 <img width="1000" height="200" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/eff_shap.png">
 </div>
 
 ### Time Complexity of SHEAR
 
-SHEAR has once model backward process to calculate the gradient for cross-contribution estimation, and <i>N</i> times of model forward process for feature contribution estimation. 
+SHEAR has one model backward process to calculate the gradient for cross-contribution estimation, and <i>N</i> model forward process for feature contribution estimation. 
 Hence, SHEAR has the time consumption given by <i>T<sub>SHEAR</sub> ≈ t<sub>backward</sub> + N t<sub>forward</sub></i> for single feature
 contribution estimation.
 Considering to interpretation of a model <i>f</i> having <i>M</i> features, we process the <i>M</i> features consecutively in this repo, where the overall time-cost increases to <i>M</i> times of single feature.
