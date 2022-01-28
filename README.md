@@ -1,4 +1,4 @@
-## Accelerating Shapley Explanation through Contributive Cooperator Selection 
+## Accelerating Shapley Explanation via Contributive Cooperator Selection 
 
 ### Research Motivation
 
@@ -9,7 +9,7 @@ To solve this problem, we propose <b>SHEAR</b> for efficient Shapley value estim
            
 ### Research Challenges  
 
-The brute-force algorithm to achieve exact Shapley values requires the enumeration of all possible feature coalitions, where the complexity grows exponentially with the feature number.
+The brute-force algorithm to calculate exact Shapley values requires the enumeration of all possible feature coalitions, where the complexity grows exponentially with the feature number.
 To address this issue, SHEAR only involves few feature coalitions for the estimation.
 In such a manner, the enumeration throughout the whole feature space can be avoided such that the computational efficiency can be significantly improved. 
 
