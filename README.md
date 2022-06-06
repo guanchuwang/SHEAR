@@ -97,5 +97,5 @@ cd ../
 
 #### Illustration of Model Interpretation:
 <div align=left>
-<img width="400" height="300" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/Interpretation_adult.png">
+<img width="400" height="300" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/Interpretation_adult.png">
 </div>
