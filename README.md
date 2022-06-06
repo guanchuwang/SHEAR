@@ -89,9 +89,9 @@ cd ../
 #### Absolute error of estimated Shapley value, Accuracy of feature importance ranking and Algorithmic throughput of SHEAR and baseline methods:
 
 <div align=center>
-<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/AE_vs_n_sample_adult.png">
-<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/mAP_vs_n_sample_adult.png">
-<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/Throughput_vs_ACC_adult.png">
+<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/AE_vs_n_sample_adult.png">
+<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/mAP_vs_n_sample_adult.png">
+<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/Throughput_vs_ACC_adult.png">
 </div>
 
 
