@@ -20,7 +20,7 @@ Specifically, for each feature, SHEAR first calculates its cross-contribution wi
 then greedily selects the contributive cooperators to maximize the cumulative cross-contribution; 
 finally estimates the feature contribution throughout the coalitions of contributive cooperators.
 <div align=center>
-<img width="1000" height="200" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/eff_shap.png">
+<img width="1000" height="200" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/eff_shap.png">
 </div>
 
 ### Time Complexity of SHEAR
@@ -89,13 +89,13 @@ cd ../
 #### Absolute error of estimated Shapley value, Accuracy of feature importance ranking and Algorithmic throughput of SHEAR and baseline methods:
 
 <div align=center>
-<img width="350" height="250" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/AE_vs_n_sample_adult.png">
-<img width="350" height="250" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/mAP_vs_n_sample_adult.png">
-<img width="350" height="250" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/Throughput_vs_ACC_adult.png">
+<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/AE_vs_n_sample_adult.png">
+<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/mAP_vs_n_sample_adult.png">
+<img width="350" height="250" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/Throughput_vs_ACC_adult.png">
 </div>
 
 
 #### Illustration of Model Interpretation:
 <div align=left>
-<img width="400" height="300" src="https://anonymous.4open.science/r/Efficient-SHAP-09FD/figure/Interpretation_adult.png">
+<img width="400" height="300" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/figure/Interpretation_adult.png">
 </div>
