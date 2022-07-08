@@ -99,3 +99,18 @@ cd ../
 <div align=left>
 <img width="400" height="300" src="https://github.com/guanchuwang/SHEAR/blob/main/figure/Interpretation_adult.png">
 </div>
+
+### Acknowledgement
+We gratefully acknowledge the Meta Platforms Inc. for their contribution in this project.
+
+### Cite this Work:
+If you find this work useful, you may cite this work:
+
+````angular2html
+@article{wang2022accelerating,
+  title={Accelerating Shapley Explanation via Contributive Cooperator Selection},
+  author={Wang*, Guanchu and Chuang*, Yu-Neng and Du, Mengnan and Yang, Fan and Zhou, Quan and Tripathi, Pushkar and Cai, Xuanting and Hu, Xia},
+  journal={arXiv preprint arXiv:2206.08529},
+  year={2022}
+}
+````
